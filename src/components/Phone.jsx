@@ -15,7 +15,7 @@ const Phone = () => {
     const dispatch = useDispatch()
     const { user } = useSelector((state) => state.auth)
     const [location, setLocation] = useState("/")
-    const [left, setLeft] = useState("-198px")
+    const [position2, setPosition2] = useState("-198px")
     const links = [
         {
             page: "/",
@@ -40,13 +40,13 @@ const Phone = () => {
     ]
     return (
         <>
-            {user && <div className='navphone md:hidden left-[-198px] flex flex-col justify-between  fixed top-0  w-52 h-full py-3  text-white' style={left === '-198px' ? { backgroundColor: "transparent", left: left } : { backgroundColor: "#433d3d", left: left }}>
+            {user && <div className='navphone md:hidden  flex flex-col justify-between  fixed top-0  w-52 h-full py-3  text-white' style={position2 === "-198px" ? { backgroundColor: "transparent", left: "-198px" } : { backgroundColor: "#433d3d", left: "0" }}>
                 <div className="profilepicdescription mx-3 flex items-center rounded-md cursor-pointer py-2 px-2">
                     <img src={user.img} alt="" className=' rounded-full w-16 h-16' />
                     <h1 className=' font-medium ml-1'>{user.name}</h1>
                 </div>
-                <ul style={left==='-198px' ? {display:"none"} :{display:"block"} } className=' cursor-pointer'>
-                    {links.map((i) => <Link key={i.page} to={i.page}> <li  style={i.page === location ? { backgroundColor: "#8080807d" } : {}} onClick={() => setLocation(i.page)} className='relative pl-4 flex  items-center py-2 hover:bg-slate-700 '>
+                <ul style={position2 === '-198px' ? { display: "none" } : { display: "block" }} className=' cursor-pointer'>
+                    {links.map((i) => <Link onClick={() => setLeft("-198px")} key={i.page} to={i.page}> <li style={i.page === location ? { backgroundColor: "#8080807d" } : {}} onClick={() => setLocation(i.page)} className='relative pl-4 flex  items-center py-2 hover:bg-slate-700 '>
                         {i.icon}
                         <p className=' ml-1'>{i.title}</p>
                         <div style={i.page === location ? { backgroundColor: "#4ea24ecc" } : {}} className=' absolute h-full w-1 top-0 right-0 '></div>
@@ -54,11 +54,11 @@ const Phone = () => {
                     </Link>)}
 
                 </ul>
-                <div className='pl-5 flex items-center py-2 hover:bg-slate-700 cursor-pointer' onClick={() => { dispatch({ type: 'clearuser' }), localStorage.removeItem("id"), navigate('/login') }}>
+                <div className='pl-5 flex items-center py-2 hover:bg-slate-700 cursor-pointer' onClick={() => { dispatch({ type: 'clearuser' }), localStorage.removeItem("id"), navigate('/login') , setPosition2("-198px") }}>
                     <FaSignOutAlt className=' text-2xl' />
                     <p className=' font-medium ml-1'>Sign Out</p>
                 </div>
-                {left === '-198px' ? <IoMdMenu className=' absolute text-3xl rounded-full py-1 px-1 top-7 left-[96%] border-gray-500 border-soli border-2' onClick={() => setLeft("0")} /> : <FaArrowLeft className=' absolute text-3xl rounded-full py-1 px-1 top-7 left-[94%] border-gray-500 border-solid border-2' onClick={() => setLeft("-198px")} />}
+                {position2 === "-198px" ? <IoMdMenu className=' absolute text-3xl rounded-full py-1 px-1 top-7 left-[96%] border-gray-500 border-soli border-2' onClick={() => setPosition2("0")} /> : <FaArrowLeft className=' absolute text-3xl rounded-full py-1 px-1 top-7 left-[94%] border-gray-500 border-solid border-2' onClick={() => setPosition2("-198px")} />}
             </div>}
         </>
     )
