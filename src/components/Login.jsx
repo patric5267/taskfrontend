@@ -46,7 +46,7 @@ const Login = () => {
             <MdEmail className=' absolute right-2 top-9 text-gray-600 text-xl' />
           </div>
           <div className="relative name flex flex-col my-3 w-full">
-            <label htmlFor="email">Create a Password</label>
+            <label htmlFor="email">Password</label>
             <input type={eye} className='outline-gray-400 text-black mt-2  rounded-md py-1 pl-2' value={user.password} onChange={(e) => setUser({ ...user, password: e.target.value })} />
            {user.password.length===0 ? <RiLockPasswordFill className=' absolute right-2 top-9 text-gray-600 text-xl' />:
             <FaRegEye className=' absolute right-2 top-9 text-gray-600 text-xl' onClick={eye==='password' ? ()=>setEye("text") : ()=>setEye("password")}/> }
