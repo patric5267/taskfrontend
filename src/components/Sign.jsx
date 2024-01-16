@@ -38,7 +38,7 @@ const Sign = () => {
   }
   return (
     <div className='relative 0  w-full flex justify-center items-center '>
-      <div className=' sign text-gray-300 w-full bg-[#add8e621] sm:w-[22rem] py-3 px-2 sm:px-4 rounded-md'>
+      <div className=' sign text-gray-300  bg-[#add8e621] w-[22rem] py-3 px-2 sm:px-4 rounded-md'>
         <h1 className=' text-2xl font-medium'>Create a Account</h1>
         <form className=' flex flex-col items-end' onSubmit={postdata}>
           <div className="relative name flex flex-col my-3 w-full">

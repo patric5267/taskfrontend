@@ -40,7 +40,7 @@ const Phone = () => {
     ]
     return (
         <>
-            {user && <div className='navphone md:hidden flex flex-col justify-between  fixed top-0  w-52 h-full py-3  text-white' style={left === '-198px' ? { backgroundColor: "transparent", left: left } : { backgroundColor: "#433d3d", left: left }}>
+            {user && <div className='navphone md:hidden left-[-198px] flex flex-col justify-between  fixed top-0  w-52 h-full py-3  text-white' style={left === '-198px' ? { backgroundColor: "transparent", left: left } : { backgroundColor: "#433d3d", left: left }}>
                 <div className="profilepicdescription mx-3 flex items-center rounded-md cursor-pointer py-2 px-2">
                     <img src={user.img} alt="" className=' rounded-full w-16 h-16' />
                     <h1 className=' font-medium ml-1'>{user.name}</h1>
