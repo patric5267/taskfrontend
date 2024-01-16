@@ -123,7 +123,7 @@ const All = ({ a, notesdata }) => {
                     <div onClick={() => setTask(true)} className='border-slate-500 border-2 border-solid bg-[#9e9e9e1f] note rounded-md px-2 py-3 h-60 md:h-52 text-gray-400 text-lg cursor-pointer flex items-center justify-center '>+ Add New Task</div>
                 </div>
             </div>
-            {task && <div className=' bg-transparent flex justify-center xl:items-center  fixed z-20 h-full w-full top-0 left-0 px-3 lg:px-0 py-3'>
+            {task && <div className=' bg-transparent flex justify-center items-center  fixed z-20 h-full w-full top-0 left-0 px-3 lg:px-0 py-3'>
                 <div className='scroll bg-[#454343] overflow-y-auto  sm:w-[29rem] w-full py-3 rounded-md text-gray-300 px-4 flex flex-col xl:h-[34rem]'>
                     <h1 className=' font-medium text-xl'>Create a Task</h1>
                     <form className=' flex flex-col items-end' onSubmit={postdata}>
