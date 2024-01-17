@@ -37,7 +37,7 @@ const Login = () => {
   }
   return (
     <div className='relative  w-full h-full flex justify-center lg:items-center  z-40 top-0'>
-      <div className='sign text-gray-300  bg-[#add8e621] w-[20rem] mt-10 lg:mt-0 h-[27rem] py-3 px-2 sm:px-4 rounded-md'>
+      <div className='sign text-gray-300  bg-[#add8e621] w-[20rem] mt-28 lg:mt-0 h-[27rem] py-3 px-2 sm:px-4 rounded-md'>
         <h1 className=' text-2xl font-medium'>Login</h1>
         <form className=' flex flex-col items-end' onSubmit={postdata}>
           <div className="relative name flex flex-col my-3 w-full">
