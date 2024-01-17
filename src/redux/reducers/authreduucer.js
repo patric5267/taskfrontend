@@ -42,7 +42,7 @@ export const authreducer = createReducer(initialstates, (builder) => {
         state.notes=action.payload.tasks
     })
     builder.addCase("createtaskpending" , (state)=>{
-        state.isloading=true
+        // state.isloading=true
     })
     builder.addCase("createtaskrejected" , (state,action)=>{
         state.isloading=false
