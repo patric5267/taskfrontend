@@ -80,7 +80,6 @@ const All = ({ a, notesdata }) => {
     const postdata = (e) => {
         e.preventDefault()
         dispatch(createnote({ user, obj }))
-        setTask(false)
     }
     useEffect(()=>{
       if(msg==='task added'){
@@ -88,6 +87,7 @@ const All = ({ a, notesdata }) => {
            dispatch({
             type:"clearmessage"
            })
+           setTask(false)
       }
     },[msg])
     return (
