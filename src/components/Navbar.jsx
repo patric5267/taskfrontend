@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdHome } from "react-icons/md";
 import { FaSignOutAlt } from "react-icons/fa";
 import { FaCheck } from "react-icons/fa";
@@ -7,11 +7,13 @@ import { MdEditDocument } from "react-icons/md";
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Navbar = () => {
+    const location2 = useLocation()
     const navigate = useNavigate()
     const dispatch = useDispatch()
-    const[location , setLocation] = useState("/")
+    const[location , setLocation] = useState(location2.pathname)
     const { user } = useSelector((state) => state.auth)
     const links = [
         {
@@ -35,6 +37,7 @@ const Navbar = () => {
             icon: <MdEditDocument className=' text-2xl' />
         }
     ]
+   
     return (
         <>
             {user && <div className='nav hidden md:flex md:flex-col md:justify-between border-slate-700 rounded-md border-solid border-2  w-52 py-3 text-white h-full bg-[#3632324d]'>
@@ -51,7 +54,7 @@ const Navbar = () => {
                     </Link>)}
 
                 </ul>
-                <div className='pl-5 flex items-center py-2 hover:bg-slate-700 cursor-pointer' onClick={() => { dispatch({ type: 'clearuser' }), localStorage.removeItem("id"), navigate('/login') }}>
+                <div className='pl-5 flex items-center py-2 hover:bg-slate-700 cursor-pointer' onClick={() => { dispatch({ type: 'clearuser' }), localStorage.removeItem("id"), navigate('/login')  }}>
                     <FaSignOutAlt className=' text-2xl' />
                     <p className=' font-medium ml-1'>Sign Out</p>
                 </div>

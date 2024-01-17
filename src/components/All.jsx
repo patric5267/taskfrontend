@@ -114,7 +114,7 @@ const All = ({ a, notesdata }) => {
                                 <button onClick={i.completed ? () => setCompleted({ ...i, completed: false, incomplete: true }) : () => setCompleted({ ...i, completed: true, incomplete: false })} style={i.completed ? { backgroundColor: '#2e932e' } : { backgroundColor: "#c62727" }} className=' font-medium rounded-full px-4 py-1'>Completed</button>
                                 <div className="deleteupdate text-2xl flex items-center ">
                                     <MdEditSquare onClick={()=> {setUpdate(true) , setUpdatedTask(i)}}/>
-                                    <MdDelete  onClick={() => setDeleted({ ...deleted, delteteditem: i._id })}/>
+                                    <MdDelete className=' ml-1 sm:ml-0'  onClick={() => setDeleted({ ...deleted, delteteditem: i._id })}/>
                                 </div>
                             </div>
                         </div>
@@ -129,19 +129,19 @@ const All = ({ a, notesdata }) => {
                     <form className=' flex flex-col items-end' onSubmit={postdata}>
                         <div className="title flex flex-col py-3 w-full">
                             <label htmlFor="title" className=' font-medium mb-2'>Title</label>
-                            <input type="text" value={obj.title} className=' rounded-md px-2 outline-none h-9 bg-white text-gray-400' placeholder='' onChange={(e) => setObj({ ...obj, title: e.target.value })} required />
+                            <input type="text" value={obj.title} className=' text-black rounded-md px-2 outline-none h-9 bg-white ' placeholder='Eg. Its my first task' onChange={(e) => setObj({ ...obj, title: e.target.value })} required />
                         </div>
                         <div className="title flex flex-col py-3 w-full">
                             <label htmlFor="description" className=' font-medium mb-2'>Description</label>
-                            <textarea name="" value={obj.description} id="" cols="30" rows="5" className='px-2 py-1 rounded-md bg-white text-gray-400 outline-none' onChange={(e) => setObj({ ...obj, description: e.target.value })} required></textarea>
+                            <textarea name="" value={obj.description} placeholder='Eg. Walk 2km tonight after dinner' id="" cols="30" rows="5" className='px-2 py-1 rounded-md bg-white text-black outline-none' onChange={(e) => setObj({ ...obj, description: e.target.value })} required></textarea>
                         </div>
                         <div className="title flex flex-col py-3 w-full">
                             <label htmlFor="date" className=' font-medium mb-2'>Date</label>
-                            <input type="date" value={obj.date} className=' px-2 rounded-md h-9 outline-none bg-white text-gray-400' placeholder='' onChange={(e) => setObj({ ...obj, date: e.target.value })} required />
+                            <input type="date" value={obj.date} className=' px-2 rounded-md h-9 outline-none bg-white text-black' placeholder='' onChange={(e) => setObj({ ...obj, date: e.target.value })} required />
                         </div>
                         <div className="title flex justify-between items-center py-3 w-full">
                             <label htmlFor="completed" className='font-medium'>Toggle Completed</label>
-                            <input type="checkbox" value={obj.completed} className=' rounded-md  outline-none  bg-white text-gray-400' placeholder='' onChange={() => setObj({ ...obj, completed: obj.completed ? false : true })} />
+                            <input type="checkbox" value={obj.completed} className=' rounded-md  outline-none  bg-white text-black' placeholder='' onChange={() => setObj({ ...obj, completed: obj.completed ? false : true })} />
                         </div>
                         <div className="title flex justify-between items-center py-3 w-full">
                             <label htmlFor="completed" className='font-medium'>Toggle Important</label>
