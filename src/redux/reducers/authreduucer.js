@@ -1,6 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 
 const initialstates = {
+    isloadinguser:false,
     user:null,
     notes:[],
     user: null,
@@ -12,25 +13,25 @@ const initialstates = {
 
 export const authreducer = createReducer(initialstates, (builder) => {
     builder.addCase("signuserpending", (state) => {
-        state.isloading = true
+        state.isloadinguser = true
     })
     builder.addCase("signusersuccess", (state, action) => {
-        state.isloading = false
+        state.isloadinguser = false
         state.msg = action.payload
     })
     builder.addCase("signuserrejected", (state, action) => {
-        state.isloading = false
+        state.isloadinguser = false
         state.errorsdata = action.payload
     })
     builder.addCase("loginuserpending", (state) => {
-        state.isloading = true
+        state.isloadinguser = true
     })
     builder.addCase("loginusersuccess", (state,action) => {
-        state.isloading = false
+        state.isloadinguser = false
         state.msg = action.payload
     })
     builder.addCase("loginuserrejected", (state,action) => {
-        state.isloading = false
+        state.isloadinguser = false
         state.msg = action.payload
     })
     builder.addCase("getuserpending" , (state)=>{

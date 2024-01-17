@@ -11,7 +11,7 @@ const Sign = () => {
   const navigate = useNavigate()
   const[eye , setEye]= useState("password")
   const dispatch  = useDispatch()
-  const {isloading , msg , errorsdata} = useSelector((state)=>state.auth)
+  const {isloadinguser , msg , errorsdata} = useSelector((state)=>state.auth)
   useEffect(()=>{
     if(errorsdata.length!==0){
       setTimeout(()=>{
@@ -58,7 +58,7 @@ const Sign = () => {
             <FaRegEye className=' absolute right-2 top-9 text-gray-600 text-xl' onClick={eye==='password' ? ()=>setEye("text") : ()=>setEye("password")}/> }
           </div>
           {
-            isloading ? <div className='relative  w-full h-7 my-2'><div className="loader absolute bottom-6 right-6"></div></div>  :  <button type='submit' className=' flex justify-center items-center text-gray-200 cursor-pointer mt-3 bg-blue-500 px-4 py-2 rounded-md text-lg'>
+            isloadinguser ? <div className='relative  w-full h-7 my-2'><div className="loader absolute bottom-6 right-6"></div></div>  :  <button type='submit' className=' flex justify-center items-center text-gray-200 cursor-pointer mt-3 bg-blue-500 px-4 py-2 rounded-md text-lg'>
            Create Account
           </button>
           }
