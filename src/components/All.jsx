@@ -109,7 +109,7 @@ const All = ({ a, notesdata }) => {
                             </p>
                         </div>
                         <div>
-                            <p className='data mt-8'>{Date(i.date).slice(0,16)}</p>
+                            <p className='data mt-8'>{(i.date).slice(0,10)}</p>
                             <div className="extras flex justify-between items-center mt-3">
                                 <button onClick={i.completed ? () => setCompleted({ ...i, completed: false, incomplete: true }) : () => setCompleted({ ...i, completed: true, incomplete: false })} style={i.completed ? { backgroundColor: '#2e932e' } : { backgroundColor: "#c62727" }} className=' font-medium rounded-full px-4 py-1'>Completed</button>
                                 <div className="deleteupdate text-2xl flex items-center ">
