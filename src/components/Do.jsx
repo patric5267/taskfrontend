@@ -7,7 +7,7 @@ import Navbar from './Navbar'
 import Phone from './Phone'
 const Do = () => {
   const dispatch = useDispatch()
-  const {user , notes} = useSelector((state)=>state.auth)
+  const {user , notes , isloading} = useSelector((state)=>state.auth)
   const navigate = useNavigate()
   useEffect(() => {
     if (!localStorage.getItem("id")) {
@@ -19,16 +19,20 @@ const Do = () => {
       }
    }
   }, [])
-  return (
-    <>
-    <Navbar/>
-    <Phone/>
-   {user &&<div className='md:ml-2 w-full  h-full'>
-  
-      <All a={location.pathname} notesdata={notes}/>
-    </div> }
-    </>
-  )
+  if(isloading){
+    return <div className=' fixed h-full w-full  left-0 top-0 flex justify-center items-center'><span class="loader2"></span></div>
+  }
+  else{
+    return (
+      <>
+      <Navbar/>
+      <Phone/>
+     {user &&<div className='md:ml-2 w-full  h-full'>
+        <All a={location.pathname} notesdata={notes}/>
+      </div> }
+      </>
+    )
+  }
 }
 
 export default Do
